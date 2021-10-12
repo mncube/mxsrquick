@@ -16,3 +16,5 @@ RoxygenNote: 7.1.1
 Imports: 
     purrr,
     utils
+URL: https://github.com/mncube/mxsrquick
+BugReports: https://github.com/mncube/mxsrquick/issues
