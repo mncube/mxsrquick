@@ -18,7 +18,7 @@ knitr::opts_chunk$set(
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of mxsrquick is to ...
+The goal of mxsrquick is to is to make MixSIAR project run quicker
 
 ## Installation
 
