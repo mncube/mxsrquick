@@ -22,10 +22,10 @@ The goal of mxsrquick is to is to make MixSIAR project run quicker
 
 ## Installation
 
-You can install the released version of mxsrquick from [CRAN](https://CRAN.R-project.org) with:
-
-``` r
-install.packages("mxsrquick")
+You can install the development version of stepurr from [GitHub](https://github.com/) with:
+```{r}
+# install.packages("devtools")
+# devtools::install_github("mncube/mxsrquick")
 ```
 
 ## Example
