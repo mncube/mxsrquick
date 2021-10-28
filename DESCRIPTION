@@ -18,3 +18,5 @@ Imports:
     utils
 URL: https://github.com/mncube/mxsrquick
 BugReports: https://github.com/mncube/mxsrquick/issues
+Depends: 
+    tidyverse
