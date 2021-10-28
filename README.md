@@ -24,39 +24,27 @@ This is a basic example which shows you how to solve a common problem:
 
 ``` r
 library(mxsrquick)
+#> Loading required package: tidyverse
+#> -- Attaching packages --------------------------------------- tidyverse 1.3.1 --
+#> v ggplot2 3.3.5     v purrr   0.3.4
+#> v tibble  3.1.4     v dplyr   1.0.7
+#> v tidyr   1.1.3     v stringr 1.4.0
+#> v readr   2.0.1     v forcats 0.5.1
+#> -- Conflicts ------------------------------------------ tidyverse_conflicts() --
+#> x dplyr::filter() masks stats::filter()
+#> x dplyr::lag()    masks stats::lag()
 
-#Save results in new subdirectory
-mixsiar_save(new_dir = "main_model",
-             isospace_filename = "isospace",
-             model_filename = "mixsiar_model.txt")
-#> Warning in dir.create(new_dir): 'main_model' already exists
-#> Warning in .f(.x[[i]], ...): cannot remove file 'prior_plot.pdf', reason 'No
-#> such file or directory'
-#> Warning in .f(.x[[i]], ...): cannot remove file 'pairs_plot.pdf', reason 'No
-#> such file or directory'
-#> Warning in .f(.x[[i]], ...): cannot remove file 'summary_statistics.txt', reason
-#> 'No such file or directory'
-#> Warning in .f(.x[[i]], ...): cannot remove file 'diagnostics.txt', reason 'No
-#> such file or directory'
-#> Warning in .f(.x[[i]], ...): cannot remove file 'diagnostics.pdf', reason 'No
-#> such file or directory'
-#> Warning in .f(.x[[i]], ...): cannot remove file 'mixsiar_model.txt', reason 'No
-#> such file or directory'
-#> [[1]]
-#> [1] FALSE
-#> 
-#> [[2]]
-#> [1] FALSE
-#> 
-#> [[3]]
-#> [1] FALSE
-#> 
-#> [[4]]
-#> [1] FALSE
-#> 
-#> [[5]]
-#> [1] FALSE
-#> 
-#> [[6]]
-#> [1] FALSE
+#Create a dataframe which mimics isospace source data
+iso_data <- data.frame(iso_a = c(2.2, 4.4, 3.3, 5.1, 3.4),
+                       iso_b = c(1.6, 3.9, 5.2, 4.2, 3.7),
+                       prot = c("bug", "bug", "bug", "plant", "plant"))
+
+#Create an isospace plot using source groups' means and standard deviations
+#Use tdf1 and tdf2 to correct for trophic discrimination factors
+source_biplot(data = iso_data, group = prot, 
+              var1 = iso_a, var2 = iso_b, 
+              tdf1 = c(2, 1), tdf2 = c(1, 1),
+              x_lab = "A", y_lab = "B")
 ```
+
+<img src="man/figures/README-example-1.png" width="100%" />
